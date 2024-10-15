@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+
+{% block the_body %}
+
+    <h2>The computer has {{ n_computer }} cards</h2>
+
+        {% for _ in range(n_computer) %}
+
+            <img src="static/cards/back.png" style="width:10%;height:10%;">
+
+        {% endfor %}
+        <br><br>
+
+    <h2>Here are your cards</h2>
+
+    {% for card in cards %}
+
+        <img src="{{ card }}" style="width:10%;height:10%;">
+
+    {% endfor %}
+
+
+{% endblock %}
