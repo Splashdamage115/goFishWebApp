@@ -6,7 +6,7 @@
 
         {% for _ in range(n_computer) %}
 
-            <img src="static/cards/back.png" style="width:10%;height:10%;">
+            <img src="/static/cards/back.png" style="width:10%;height:10%;">
 
         {% endfor %}
         <br><br>
@@ -15,7 +15,7 @@
 
     {% for card in cards %}
 
-        <img src="{{ card }}" style="width:10%;height:10%;">
+        <a href="\select\{{ card[: card.find('_')] }}"><img src="/static/cards/{{ card }}" style="width:10%;height:10%;"></a>
 
     {% endfor %}
 
