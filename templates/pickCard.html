@@ -3,8 +3,6 @@
 {% block the_body %}
 
 <div id="computer">
-    <h2>The computer has {{ n_computer }} cards</h2>
-
     <div id="computerCards">
         {% for _ in range(n_computer) %}
 
@@ -23,12 +21,27 @@
     {% endfor %}
 </div>
 
+<div id="playerPairStack">
+    <h id="playerPairAmt">  Pairs<br>{{(playerPair / 2)|round|int}}</h>
+    {% for t in range(playerPair) %}
+    <img src="/static/cards/back.png" class="playerPairCard" style="transform: translateY(-{{(t - 1) / 2}}px);">
+    {% endfor %}
+</div>
+
+<div id="computerPairStack">
+    <h id="computerPairAmt">  Pairs<br>{{(computerPair / 2)|round|int}}</h>
+    {% for t in range(computerPair) %}
+    <img src="/static/cards/back.png" class="computerPairCard" style="transform: translateY(-{{(t - 1) / 2}}px);">
+    {% endfor %}
+</div>
+
 <div id="player">
     <div id="playerCards">
     {% for card in cards %}
-
+        <div id="playerCard">
+        <p class="giveCard">Give</p>
         <a href="\pick\{{ card[: card.find('_')] }}"><img src="/static/cards/{{ card }}" class="cardImg"></a>
-
+    </div>
     {% endfor %}
     </div>
 

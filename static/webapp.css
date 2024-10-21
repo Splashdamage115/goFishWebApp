@@ -55,6 +55,185 @@ body {
   transform: translateY(-3px);
 }
 
+#playerCards .cardImg {
+  position: static;
+}
+
+
+@keyframes swipeIn {
+  from {
+    transform: translate(0%, 0%);
+  }
+  to {
+    transform: translate(0%, -170%);
+  }
+}
+
+#playerCard .requestCard{
+  display:none;
+  position:absolute;
+  top: inherit;
+  left: inherit;
+  background-color: rgb(35, 71, 0);
+  color: azure;
+
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#playerCard:hover .requestCard {
+  display: block;
+
+  animation-name: swipeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#playerCard .giveCard{
+  display:none;
+  position:absolute;
+  top: inherit;
+  left: inherit;
+  background-color: rgb(35, 71, 0);
+  color: azure;
+
+  padding: 20px;
+  padding-left: 37px;
+  padding-right: 37px;
+  border-radius: 10px;
+}
+
+#playerCard:hover .giveCard {
+  display: block;
+
+  animation-name: swipeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#playerPairAmt{
+  position: fixed;
+  top: 70%;
+  right: 15%;
+  font-size: 200%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  color:transparent;
+  text-shadow: transparent;
+  cursor:default;
+}
+
+#playerPairAmtGO{
+  position: fixed;
+  top: 50%;
+  left: 8%;
+  font-size: 200%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  color:azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  cursor:default;
+}
+
+#computerPairAmtGO{
+  position: fixed;
+  top: 50%;
+  right: 25%;
+  font-size: 200%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  color:azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  cursor:default;
+}
+
+#computerPairAmt{
+  position: fixed;
+  top: 20%;
+  right: 15%;
+  font-size: 200%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  color:transparent;
+  text-shadow: transparent;
+  cursor:default;
+}
+
+#deckAmt{
+  position: fixed;
+  top: 50%;
+  left: 4%;
+  font-size: 200%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  color:transparent;
+  text-shadow: transparent;
+  cursor:default;
+}
+
+
+@keyframes fadeIn {
+  from {
+    color:transparent;
+    text-shadow: transparent;
+  }
+  to {
+    color:azure;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    color: azure;
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+  }
+  to {
+    color: transparent;
+    text-shadow: transparent;
+  }
+}
+
+
+#playerPairStack:hover #playerPairAmt{
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#playerPairStack #playerPairAmt {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#computerPairStack:hover #computerPairAmt{
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#computerPairStack #computerPairAmt {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+#deckStack:hover #deckAmt{
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+#deckStack #deckAmt {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+
+
+
 #deckStack{
   position: fixed;
   top: 50%;
@@ -64,6 +243,46 @@ body {
 .deckCard{
   position:fixed;
   max-height: 160px;
+}
+
+#playerPairStack{
+  position: fixed;
+  top: 70%;
+  right: 15%;
+  z-index: 0;
+}
+
+#playerPairStackGO{
+  position: fixed;
+  top: 50%;
+  left: 15%;
+  z-index: 0;
+}
+
+.playerPairCard{
+  position:fixed;
+  max-height: 160px;
+  z-index: 0;
+}
+
+#computerPairStack{
+  position: fixed;
+  top: 20%;
+  right: 15%;
+  z-index: 0;
+}
+
+#computerPairStackGO{
+  position: fixed;
+  top: 50%;
+  right: 25%;
+  z-index: 0;
+}
+
+.computerPairCard{
+  position:fixed;
+  max-height: 160px;
+  z-index: 0;
 }
 
 .Restart{
@@ -84,4 +303,24 @@ body {
 
 .cardImg{
   max-height: 160px;
+}
+
+.playerName{
+  position: fixed;
+  top: 45%;
+  left: 0%;
+  font-size: 250%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  cursor:default;
+}
+
+.computerName{
+  position: fixed;
+  top: 45%;
+  right: 33%;
+  font-size: 250%;
+  z-index: 1;
+  transform: translate(120%, 50%);
+  cursor:default;
 }

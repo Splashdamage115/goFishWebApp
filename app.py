@@ -16,7 +16,9 @@ def start():
         title = "Welcome to GoFish for the web!",
         cards = card_images, # available in the template as {{  cards  }}
         n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
-        deck = len(session["deck"])
+        deck = len(session["deck"]),
+        playerPair = len(session["player_pairs"]),
+        computerPair = len(session["computer_pairs"])
     )
 
 @app.get("/select/<value>")
@@ -62,7 +64,9 @@ def processCardSelection(value):
         value = the_value,
         cards = card_images, # available in the template as {{  cards  }}
         n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
-        deck = len(session["deck"])
+        deck = len(session["deck"]),
+        playerPair = len(session["player_pairs"]),
+        computerPair = len(session["computer_pairs"])
     )
 
 @app.get("/pick/<value>")
@@ -85,7 +89,26 @@ def processCardHandOver(value):
         title = "Keep Playing!",
         cards = card_images, # available in the template as {{  cards  }}
         n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
-        deck = len(session["deck"])
+        deck = len(session["deck"]),
+        playerPair = len(session["player_pairs"]),
+        computerPair = len(session["computer_pairs"])
+    )
+
+
+@app.get("/gameOver")
+def gameOver():
+    text = ""
+    if len(session["player_pairs"]) > len(session["computer_pairs"]):
+        text = "You Won!"
+    elif len(session["player_pairs"]) < len(session["computer_pairs"]):
+        text = "You Lost!"
+    else:
+        text = "It was a Draw!"
+    return render_template(
+        "gameOver.html",
+        title = text,
+        playerPair = len(session["player_pairs"]),
+        computerPair = len(session["computer_pairs"])
     )
 
 
