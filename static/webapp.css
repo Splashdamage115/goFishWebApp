@@ -1,7 +1,12 @@
 body {
     font-family: Verdana, Geneva, Arial, sans-serif;
-    background-color: rgb(160, 240, 240);
+    background-color: rgb(2, 122, 0);
     margin: 10%;
+    text-align: center;
+  /* We do this after the colour as a fallback */
+    background-image: url("./TileableCheckerboard.png");
+    background-size: 64px;
+    background-repeat: repeat;
   }
    
   h2 {
@@ -23,3 +28,60 @@ body {
   a:hover {
     text-decoration: underline;
   }
+
+#player{
+  position: fixed;
+  bottom:10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#computer{
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#playerCards{
+  display: flex;
+
+  padding: 16px;
+  background-image: url("./PlayerBack.png");
+  background-size: 32px;
+  background-repeat: repeat;
+}
+
+#playerCards .cardImg:hover{
+  transform: translateY(-3px);
+}
+
+#deckStack{
+  position: fixed;
+  top: 50%;
+  left: 5%;
+}
+
+.deckCard{
+  position:fixed;
+  max-height: 160px;
+}
+
+.Restart{
+  position:absolute;
+  bottom: 5%;
+  left:47%;
+}
+
+
+#computerCards{
+  display: flex;
+
+  padding: 16px;
+  background-image: url("./PlayerBack.png");
+  background-size: 32px;
+  background-repeat: repeat;
+}
+
+.cardImg{
+  max-height: 160px;
+}

@@ -15,7 +15,8 @@ def start():
         "startgame.html",
         title = "Welcome to GoFish for the web!",
         cards = card_images, # available in the template as {{  cards  }}
-        n_computer = len(session["computer"]) # available in the template as {{  n_computer  }}
+        n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
+        deck = len(session["deck"])
     )
 
 @app.get("/select/<value>")
@@ -59,7 +60,9 @@ def processCardSelection(value):
         "pickCard.html",
         title = "The Computer wants to Know",
         value = the_value,
-        cards = card_images # available in the template as {{  cards  }}
+        cards = card_images, # available in the template as {{  cards  }}
+        n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
+        deck = len(session["deck"])
     )
 
 @app.get("/pick/<value>")
@@ -81,7 +84,8 @@ def processCardHandOver(value):
         "startgame.html",
         title = "Keep Playing!",
         cards = card_images, # available in the template as {{  cards  }}
-        n_computer = len(session["computer"]) # available in the template as {{  n_computer  }}
+        n_computer = len(session["computer"]), # available in the template as {{  n_computer  }}
+        deck = len(session["deck"])
     )
 
 
