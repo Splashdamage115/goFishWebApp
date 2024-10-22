@@ -180,7 +180,9 @@ body {
   background-color: rgb(35, 71, 0);
   color: azure;
 
-  padding: 20px;
+  padding: 10px;
+  padding-right: 27px;
+  padding-left: 27px;
   border-radius: 10px;
 }
 
