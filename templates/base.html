@@ -6,7 +6,7 @@
     </head>
     <body>
          
-    <p>
+    <!--<p>
         <ul>
             {% for message in get_flashed_messages() %}
             
@@ -15,10 +15,12 @@
             {% endfor %}
         </ul>
     </p>
-
+    !-->
         {% block the_body %}
         {% endblock %}
 
-        <a href="/startgame" class="Restart">Restart Game</a>
+        <div class="Restart"><h id="restartText">Restart</h>
+        <a href="/startgame" class="Restart"><img src="/static/restartButton.png" style="max-width: 64px;"></a>
+    </div>
     </body>
 </html>

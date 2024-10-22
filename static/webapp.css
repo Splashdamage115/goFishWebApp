@@ -172,6 +172,27 @@ body {
 }
 
 
+#deckStack #goFishButton{
+  display:none;
+  position:absolute;
+  top: inherit;
+  left: inherit;
+  background-color: rgb(35, 71, 0);
+  color: azure;
+
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#deckStack:hover #goFishButton {
+  display: block;
+
+  animation-name: swipeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+
 @keyframes fadeIn {
   from {
     color:transparent;
@@ -285,10 +306,41 @@ body {
   z-index: 0;
 }
 
+@keyframes swipeDown {
+  from {
+    transform: translate(0%, 0%);
+    opacity:0;
+  }
+  to {
+    transform: translate(0%, 120%);
+    opacity:1.0;
+  }
+}
+
 .Restart{
   position:absolute;
-  bottom: 5%;
-  left:47%;
+  top: 0%;
+  left:0%;
+}
+
+.Restart #restartText{
+  display:none;
+  position:absolute;
+  top: inherit;
+  left: inherit;
+  background-color: rgb(35, 71, 0);
+  color: azure;
+
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Restart:hover #restartText {
+  display: block;
+
+  animation-name: swipeDown;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
 }
 
 
@@ -323,4 +375,94 @@ body {
   z-index: 1;
   transform: translate(120%, 50%);
   cursor:default;
+}
+
+#endGameText
+{
+  color: azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 500%;
+}
+
+.resolve
+{
+  position:fixed;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  max-height: 160px;
+}
+
+@keyframes disolve {
+  0% {
+    opacity: 1.0;
+  }
+  50%{
+    opacity:1.0;
+  }
+
+  100% {
+    opacity: 0.0;
+  }
+}
+
+#disolveCard
+{
+  max-height: 160px;
+
+  animation-name: disolve;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveDown {
+  0% {
+    transform:translateY(0%);
+  }
+  50%{
+    transform:translateY(0%);
+    opacity: 1.0;
+  }
+
+  99% {
+    transform:translateY(400%);
+    opacity: 0.0;
+  }
+  100%{
+    transform:translateY(-400%);
+    opacity:0.0;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform:translateY(0%);
+  }
+  50%{
+    transform:translateY(0%);
+    opacity: 1.0;
+  }
+
+  100% {
+    transform:translateY(-400%);
+    opacity: 0.0;
+  }
+}
+
+#animateCard
+{
+  max-height: 160px;
+
+  animation-name: moveDown;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+}
+
+#animateCardUp
+{
+  max-height: 160px;
+
+  animation-name: moveUp;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
 }

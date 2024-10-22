@@ -2,8 +2,6 @@
 
 {% block the_body %}
 
-<a href="\gameOver">END THE GAME</a>
-
 <div id="computer">
     <div id="computerCards">
         {% for _ in range(n_computer) %}
@@ -47,6 +45,18 @@
         </div>
     {% endfor %}
     </div>
+</div>
+
+<div class="resolve">
+    <img src="/static/cards/{{ resolveCard }}" class="cardImg">
+</div>
+
+<div class="resolve">
+    <img src="/static/cards/{{ animateCard }}" id="animateCardUp">
+</div>
+
+<div class="resolve">
+    <img src="/static/cards/{{ disolveCard }}" id="disolveCard">
 </div>
 
 
