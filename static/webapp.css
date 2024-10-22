@@ -125,11 +125,11 @@ body {
 
 #playerPairAmtGO{
   position: fixed;
-  top: 50%;
-  left: 8%;
+  top: 53%;
+  left: 16%;
   font-size: 200%;
   z-index: 1;
-  transform: translate(120%, 50%);
+  
   color:azure;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   cursor:default;
@@ -137,11 +137,11 @@ body {
 
 #computerPairAmtGO{
   position: fixed;
-  top: 50%;
-  right: 25%;
+  top: 53%;
+  left: 76%;
   font-size: 200%;
   z-index: 1;
-  transform: translate(120%, 50%);
+  
   color:azure;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   cursor:default;
@@ -359,21 +359,23 @@ body {
 
 .playerName{
   position: fixed;
-  top: 45%;
-  left: 0%;
+  top: 44%;
+  left: 14%;
   font-size: 250%;
   z-index: 1;
-  transform: translate(120%, 50%);
+  color: azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   cursor:default;
 }
 
 .computerName{
   position: fixed;
-  top: 45%;
-  right: 33%;
+  top: 44%;
+  left: 74%;
   font-size: 250%;
   z-index: 1;
-  transform: translate(120%, 50%);
+  color: azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   cursor:default;
 }
 
@@ -383,6 +385,44 @@ body {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-size: 500%;
 }
+
+#playAgain
+{
+  color: azure;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 500%;
+  position: fixed;
+  left:50%;
+  top:80%;
+  transform:translate(-50%,-50%);
+  background-color: rgb(35, 71, 0);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+@keyframes highlightRestart {
+  0% {
+    box-shadow: inset 0px 0px 0px 0px rgb(2, 122, 0);
+    transform:translate(-50%,-50%);
+  }
+
+  75% {
+    box-shadow: inset 9px 9px 25px 25px rgb(2, 122, 0);
+    transform:translate(-50%,-52%);
+  }
+
+  100% {
+    box-shadow: inset 10px 10px 30px 30px rgb(2, 122, 0);
+    transform:translate(-50%,-53%);
+  }
+}
+
+#playAgain:hover{
+  animation-name: highlightRestart;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+  
 
 .resolve
 {
