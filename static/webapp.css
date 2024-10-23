@@ -265,6 +265,7 @@ body {
 
 .deckCard{
   position:fixed;
+  height: 16vh;
   max-height: 160px;
 }
 
@@ -284,6 +285,7 @@ body {
 
 .playerPairCard{
   position:fixed;
+  height: 16vh;
   max-height: 160px;
   z-index: 0;
 }
@@ -304,6 +306,7 @@ body {
 
 .computerPairCard{
   position:fixed;
+  height: 16vh;
   max-height: 160px;
   z-index: 0;
 }
@@ -356,6 +359,7 @@ body {
 }
 
 .cardImg{
+  height: 16vh;
   max-height: 160px;
 }
 
@@ -432,6 +436,7 @@ body {
   left: 50%;
   top: 50%;
   transform:translate(-50%,-50%);
+  height: 16vh;
   max-height: 160px;
 }
 
@@ -450,6 +455,7 @@ body {
 
 #disolveCard
 {
+  height: 16vh;
   max-height: 160px;
 
   animation-name: disolve;
@@ -493,6 +499,7 @@ body {
 
 #animateCard
 {
+  height: 16vh;
   max-height: 160px;
 
   animation-name: moveDown;
@@ -502,6 +509,7 @@ body {
 
 #animateCardUp
 {
+  height: 16vh;
   max-height: 160px;
 
   animation-name: moveUp;

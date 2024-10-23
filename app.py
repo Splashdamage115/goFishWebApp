@@ -40,7 +40,7 @@ def start():
         deck = len(session["deck"]),
         playerPair = len(session["player_pairs"]),
         computerPair = len(session["computer_pairs"]),
-        resolveCard = "none.png",
+        resolveCard = "GreetingCard.png",
         animateCard = "none.png",
         disolveCard = "welcomCard.png"
     )
@@ -102,9 +102,8 @@ def processCardSelection(value):
 
 @app.get("/liarPage")
 def liarPage():
-    drawType = "none.png"
-    drawn = session["player"][-1]
-    drawn = drawn.lower().replace(" ", "_") + ".png"
+    drawType = "areYouSure.png"
+    drawn = "none.png"
     card_images = [card.lower().replace(" ", "_") + ".png" for card in session["player"]]
 
     
